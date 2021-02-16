@@ -4,8 +4,8 @@ using System.Text;
 
 namespace CheckoutKataInterfaces
 {
-    public interface IStore
+    public interface ICheckoutFactory
     {
-
+        ICheckout Create(IStockRepository stockRepository);
     }
 }

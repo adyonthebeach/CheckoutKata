@@ -6,7 +6,8 @@ namespace CheckoutKataInterfaces
 {
     public interface ICheckout
     {
-        public void ScanItem(IStockItem stockItem);
+        public List<IStockItem> ScannedItems { get; set; }
+        public bool ScanItem(string Sku);
         public decimal GetTotalPrice();
     }
 }

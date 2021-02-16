@@ -8,10 +8,10 @@ namespace CheckoutKata
     {
         public CheckoutKata()
         {
-            var storeFactory = new SupermarketFactory();
-            var Store = storeFactory.Create(new StockRepository());
+            var checkoutFactory = new CheckoutFactory();
+            var checkout = checkoutFactory.Create(new StockRepository());
 
-            Store
+            checkout.ScanItem("Test");
         }
     }
 }

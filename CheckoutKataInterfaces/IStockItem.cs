@@ -6,5 +6,7 @@ namespace CheckoutKataInterfaces
 {
     public interface IStockItem
     {
+        public string Sku { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 }

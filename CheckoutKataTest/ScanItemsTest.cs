@@ -1,19 +1,20 @@
 using NUnit.Framework;
+using StoreRepository;
+using Supermarket;
 
 namespace CheckoutKataTest
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-            
-        }
 
         [Test]
         public void ScanItemTest()
         {
-            Assert.Pass();
+            var checkoutFactory = new CheckoutFactory();
+            var checkout = checkoutFactory.Create(new StockRepository());
+            checkout.ScanItem("Test");
+
+            Assert.AreEqual(1, checkout.ScannedItems.Count);
         }
     }
 }

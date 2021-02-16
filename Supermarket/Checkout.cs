@@ -6,16 +6,35 @@ namespace Supermarket
 {
     public class Checkout : ICheckout
     {
-        public List<IStockItem> StockItems;
+        private IStock _stock;
+        public List<IStockItem> ScannedItems { get; set; }
+
+        public Checkout(IStock stock)
+        {
+            _stock = stock;
+            ScannedItems = new List<IStockItem>();
+        }
 
         public decimal GetTotalPrice()
         {
             throw new NotImplementedException();
         }
 
-        public void ScanItem(IStockItem stockItem)
+        public bool ScanItem(string sku)
         {
-            StockItems.Add(stockItem);
+            if(_stock.ContainsItemWithMatching(sku))
+            {
+                AddItemToStockItemsWithMatching(sku);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void AddItemToStockItemsWithMatching(string sku)
+        {
+            var stockItem = _stock.GetStockItemWithMatching(sku);
+            ScannedItems.Add(stockItem);
         }
     }
 }
