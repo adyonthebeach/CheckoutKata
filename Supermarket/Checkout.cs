@@ -41,21 +41,25 @@ namespace Supermarket
             foreach(SpecialOffer specialOffer in _stock.SpecialOffers())
             {
                 var numberOfSpecialOfferItems = ScannedItems.Count(stockItem => stockItem.Sku == specialOffer.Sku);
-                itemsTotal = ApplyDiscount(itemsTotal, specialOffer, numberOfSpecialOfferItems);
+
+                itemsTotal -= CalculateDiscount(specialOffer, numberOfSpecialOfferItems);
             }
 
             return itemsTotal;
         }
 
-        private decimal ApplyDiscount(decimal itemsTotal, SpecialOffer specialOffer, int specialOfferItemCount)
+        private decimal CalculateDiscount(SpecialOffer specialOffer, int specialOfferItemCount)
         {
-            if(specialOfferItemCount > 0)
+            if(specialOfferItemCount >= specialOffer.Quantity)
             {
-                var discountMultiplier = specialOfferItemCount / specialOffer.Quantity;
-                itemsTotal = itemsTotal - (specialOffer.OfferPrice * discountMultiplier);
+                var stockItemTotalCost = _stock.GetStockItemWithMatching(specialOffer.Sku).UnitPrice * specialOfferItemCount;
+                var discountMultiplier = specialOffer.Quantity / specialOfferItemCount;
+                var specialOfferPrice = specialOffer.OfferPrice * discountMultiplier;
+
+                return stockItemTotalCost - specialOfferPrice;
             }
 
-            return itemsTotal;
+            return 0;
         }
 
         public bool ScanItem(string sku)

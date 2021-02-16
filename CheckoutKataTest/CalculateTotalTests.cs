@@ -31,7 +31,7 @@ namespace CheckoutKataTest
             checkout.ScanItem("B15");
             checkout.ScanItem("C40");
 
-            Assert.AreEqual(2.80m, checkout.GetTotalPrice());
+            Assert.AreEqual(2.65m, checkout.GetTotalPrice());
         }
     }
 }
