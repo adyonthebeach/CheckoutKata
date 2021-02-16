@@ -18,5 +18,20 @@ namespace CheckoutKataTest
 
             Assert.AreEqual(0.50m, checkout.GetTotalPrice());
         }
+
+        [Test]
+        public void CheckTotalOfMultipleItemsTest()
+        {
+            var checkoutFactory = new CheckoutFactory();
+            var checkout = checkoutFactory.Create(new StockRepository());
+            checkout.ScanItem("A99");
+            checkout.ScanItem("B15");
+            checkout.ScanItem("C40");
+            checkout.ScanItem("A99");
+            checkout.ScanItem("B15");
+            checkout.ScanItem("C40");
+
+            Assert.AreEqual(2.80m, checkout.GetTotalPrice());
+        }
     }
 }
