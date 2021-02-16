@@ -1,13 +1,19 @@
-﻿using System;
+﻿using CheckoutKataInterfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Supermarket
 {
-    public class Checkout
+    public class Checkout : ICheckout
     {
-        public List<StockItem> StockItems;
+        public List<IStockItem> StockItems;
 
-        public void ScanItem(StockItem stockItem)
+        public decimal GetTotalPrice()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ScanItem(IStockItem stockItem)
         {
             StockItems.Add(stockItem);
         }

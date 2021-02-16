@@ -6,6 +6,6 @@ namespace CheckoutKataInterfaces
 {
     public interface ISupermarketFactory
     {
-        IStore Create(IStoreRepository storeRepository);
+        IStore Create(IStockRepository storeRepository);
     }
 }

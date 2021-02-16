@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace StoreRepository
 {
-    public class StoreRepository : IStoreRepository
+    public class StockRepository : IStockRepository
     {
         public List<ISpecialOffer> GetSpecialOffers()
         {

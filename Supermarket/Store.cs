@@ -7,8 +7,8 @@ namespace Supermarket
 {
     public class Store : IStore
     {
-        private IStoreRepository _storeRepository;
-        public Store(IStoreRepository storeRepository)
+        private IStockRepository _storeRepository;
+        public Store(IStockRepository storeRepository)
         {
             _storeRepository = storeRepository;
         }

@@ -7,7 +7,7 @@ namespace Supermarket
 {
     public class SupermarketFactory : ISupermarketFactory
     {
-        public IStore Create(IStoreRepository storeRepository)
+        public IStore Create(IStockRepository storeRepository, )
         {
             return new Store(storeRepository);
         }

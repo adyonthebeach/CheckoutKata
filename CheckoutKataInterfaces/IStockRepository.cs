@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CheckoutKataInterfaces
 {
-    public interface IStoreRepository
+    public interface IStockRepository
     {
         List<IStockItem> GetStockItems();
         List<ISpecialOffer> GetSpecialOffers();
