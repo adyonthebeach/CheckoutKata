@@ -8,5 +8,7 @@ namespace CheckoutKataInterfaces
     {
         public bool ContainsItemWithMatching(string Sku);
         public IStockItem GetStockItemWithMatching(string sku);
+
+        public List<ISpecialOffer> SpecialOffers();
     }
 }

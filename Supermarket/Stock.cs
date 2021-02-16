@@ -23,5 +23,10 @@ namespace Supermarket
         {
             return _stockRepository.GetStockItems().FirstOrDefault(stockItem => stockItem.Sku == sku);
         }
+
+        public List<ISpecialOffer> SpecialOffers()
+        {
+            return _stockRepository.GetSpecialOffers();
+        }
     }
 }

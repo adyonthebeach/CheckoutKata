@@ -9,7 +9,21 @@ namespace StoreRepository
     {
         public List<ISpecialOffer> GetSpecialOffers()
         {
-            throw new NotImplementedException();
+            return new List<ISpecialOffer>()
+            {
+                new SpecialOffer()
+                {
+                    Sku = "A99",
+                    Quantity = 3,
+                    OfferPrice = 1.30m
+                },
+                new SpecialOffer()
+                {
+                    Sku = "B15",
+                    Quantity = 2,
+                    OfferPrice = 0.45m
+                }
+            };
         }
 
         public List<IStockItem> GetStockItems()
