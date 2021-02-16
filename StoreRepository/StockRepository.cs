@@ -1,4 +1,5 @@
 ﻿using CheckoutKataInterfaces;
+using Supermarket;
 using System;
 using System.Collections.Generic;
 
@@ -13,7 +14,24 @@ namespace StoreRepository
 
         public List<IStockItem> GetStockItems()
         {
-            throw new NotImplementedException();
+            return new List<IStockItem>()
+            {
+                new StockItem()
+                {
+                    Sku = "A99",
+                    UnitPrice = 0.50m
+                },
+                new StockItem()
+                {
+                    Sku = "B15",
+                    UnitPrice = 0.30m,
+                },
+                new StockItem()
+                {
+                    Sku = "C40",
+                    UnitPrice = 0.60m
+                }
+            };
         }
     }
 }

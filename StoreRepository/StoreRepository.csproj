@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CheckoutKataInterfaces\CheckoutKataInterfaces.csproj" />
+    <ProjectReference Include="..\Supermarket\Supermarket.csproj" />
   </ItemGroup>
 
 </Project>
