@@ -4,7 +4,7 @@ using Supermarket;
 
 namespace CheckoutKataTest
 {
-    public class Tests
+    public class ScanItemsTests
     {
         [Test]
         public void ScanItemThatExistsInStockListTest()
