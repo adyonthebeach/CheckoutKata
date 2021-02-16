@@ -17,7 +17,13 @@ namespace Supermarket
 
         public decimal GetTotalPrice()
         {
-            throw new NotImplementedException();
+            var totalPrice = 0.0m;
+            foreach(StockItem item in ScannedItems)
+            {
+                totalPrice += item.UnitPrice;
+            }
+
+            return totalPrice;
         }
 
         public bool ScanItem(string sku)
