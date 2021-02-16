@@ -7,10 +7,11 @@ namespace CheckoutKataTest
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]
-        public void Test1()
+        public void ScanItemTest()
         {
             Assert.Pass();
         }
